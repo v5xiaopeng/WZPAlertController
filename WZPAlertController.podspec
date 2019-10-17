@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZPAlertController"
-  s.version      = "3"
+  s.version      = "4"
   s.summary      = "WZPAlertController."
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "WZPAlertController/**/*.{h,m,swift}"
+  s.source_files  = "WZPAlertController/WZPAlertController/**/*.{h,m,swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
