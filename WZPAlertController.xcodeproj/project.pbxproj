@@ -13,6 +13,14 @@
 		046AAA6E2357FD9F00C69DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046AAA6D2357FD9F00C69DE3 /* Assets.xcassets */; };
 		046AAA712357FD9F00C69DE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046AAA6F2357FD9F00C69DE3 /* LaunchScreen.storyboard */; };
 		046AAA742357FD9F00C69DE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AAA732357FD9F00C69DE3 /* main.m */; };
+		048DD682235808E200850842 /* WZPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048DD681235808E200850842 /* WZPAlertController.m */; };
+		04F1A9C423585698004B3677 /* testImg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A9BF23585697004B3677 /* testImg01.jpg */; };
+		04F1A9C523585698004B3677 /* testImg03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A9C023585698004B3677 /* testImg03.jpg */; };
+		04F1A9C623585698004B3677 /* testImg04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A9C123585698004B3677 /* testImg04.jpg */; };
+		04F1A9C723585698004B3677 /* testImg05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A9C223585698004B3677 /* testImg05.jpg */; };
+		04F1A9C823585698004B3677 /* testImg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A9C323585698004B3677 /* testImg02.jpg */; };
+		04F1A9CA23585FA7004B3677 /* testImg06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F1A9C923585FA7004B3677 /* testImg06.jpg */; };
+		C7C5F27259AFE691CA5ACD74 /* Pods_WZPAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ED4BB2E2DA09CB907213DC /* Pods_WZPAlertController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,17 @@
 		046AAA702357FD9F00C69DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046AAA722357FD9F00C69DE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046AAA732357FD9F00C69DE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		048DD680235808E200850842 /* WZPAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZPAlertController.h; sourceTree = "<group>"; };
+		048DD681235808E200850842 /* WZPAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZPAlertController.m; sourceTree = "<group>"; };
+		04F1A9BF23585697004B3677 /* testImg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg01.jpg; sourceTree = "<group>"; };
+		04F1A9C023585698004B3677 /* testImg03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg03.jpg; sourceTree = "<group>"; };
+		04F1A9C123585698004B3677 /* testImg04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg04.jpg; sourceTree = "<group>"; };
+		04F1A9C223585698004B3677 /* testImg05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg05.jpg; sourceTree = "<group>"; };
+		04F1A9C323585698004B3677 /* testImg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg02.jpg; sourceTree = "<group>"; };
+		04F1A9C923585FA7004B3677 /* testImg06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg06.jpg; sourceTree = "<group>"; };
+		50E4EBA1F9F6C4CD85096DDA /* Pods-WZPAlertController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZPAlertController.debug.xcconfig"; path = "Target Support Files/Pods-WZPAlertController/Pods-WZPAlertController.debug.xcconfig"; sourceTree = "<group>"; };
+		A96410FDF836C7ED85396D8C /* Pods-WZPAlertController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZPAlertController.release.xcconfig"; path = "Target Support Files/Pods-WZPAlertController/Pods-WZPAlertController.release.xcconfig"; sourceTree = "<group>"; };
+		B5ED4BB2E2DA09CB907213DC /* Pods_WZPAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZPAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7C5F27259AFE691CA5ACD74 /* Pods_WZPAlertController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +64,8 @@
 			children = (
 				046AAA632357FD9D00C69DE3 /* WZPAlertController */,
 				046AAA622357FD9D00C69DE3 /* Products */,
+				2D351805CB5525BE049F00A1 /* Pods */,
+				1733ADE7F16921BD6AA55FC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +80,13 @@
 		046AAA632357FD9D00C69DE3 /* WZPAlertController */ = {
 			isa = PBXGroup;
 			children = (
+				04F1A9C923585FA7004B3677 /* testImg06.jpg */,
+				04F1A9C123585698004B3677 /* testImg04.jpg */,
+				04F1A9C023585698004B3677 /* testImg03.jpg */,
+				04F1A9C223585698004B3677 /* testImg05.jpg */,
+				04F1A9C323585698004B3677 /* testImg02.jpg */,
+				04F1A9BF23585697004B3677 /* testImg01.jpg */,
+				048DD67F235808AE00850842 /* WZPAlertController */,
 				046AAA642357FD9D00C69DE3 /* AppDelegate.h */,
 				046AAA652357FD9D00C69DE3 /* AppDelegate.m */,
 				046AAA672357FD9D00C69DE3 /* ViewController.h */,
@@ -71,6 +100,32 @@
 			path = WZPAlertController;
 			sourceTree = "<group>";
 		};
+		048DD67F235808AE00850842 /* WZPAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				048DD680235808E200850842 /* WZPAlertController.h */,
+				048DD681235808E200850842 /* WZPAlertController.m */,
+			);
+			path = WZPAlertController;
+			sourceTree = "<group>";
+		};
+		1733ADE7F16921BD6AA55FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5ED4BB2E2DA09CB907213DC /* Pods_WZPAlertController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D351805CB5525BE049F00A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50E4EBA1F9F6C4CD85096DDA /* Pods-WZPAlertController.debug.xcconfig */,
+				A96410FDF836C7ED85396D8C /* Pods-WZPAlertController.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046AAA772357FD9F00C69DE3 /* Build configuration list for PBXNativeTarget "WZPAlertController" */;
 			buildPhases = (
+				B1446361EE58E12152ECA20F /* [CP] Check Pods Manifest.lock */,
 				046AAA5D2357FD9D00C69DE3 /* Sources */,
 				046AAA5E2357FD9D00C69DE3 /* Frameworks */,
 				046AAA5F2357FD9D00C69DE3 /* Resources */,
+				5C0D74D42058E5A63F79401E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,19 +185,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F1A9C823585698004B3677 /* testImg02.jpg in Resources */,
+				04F1A9C623585698004B3677 /* testImg04.jpg in Resources */,
 				046AAA712357FD9F00C69DE3 /* LaunchScreen.storyboard in Resources */,
+				04F1A9C723585698004B3677 /* testImg05.jpg in Resources */,
 				046AAA6E2357FD9F00C69DE3 /* Assets.xcassets in Resources */,
+				04F1A9C523585698004B3677 /* testImg03.jpg in Resources */,
+				04F1A9CA23585FA7004B3677 /* testImg06.jpg in Resources */,
+				04F1A9C423585698004B3677 /* testImg01.jpg in Resources */,
 				046AAA6C2357FD9D00C69DE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C0D74D42058E5A63F79401E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WZPAlertController/Pods-WZPAlertController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1446361EE58E12152ECA20F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WZPAlertController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		046AAA5D2357FD9D00C69DE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048DD682235808E200850842 /* WZPAlertController.m in Sources */,
 				046AAA692357FD9D00C69DE3 /* ViewController.m in Sources */,
 				046AAA742357FD9F00C69DE3 /* main.m in Sources */,
 				046AAA662357FD9D00C69DE3 /* AppDelegate.m in Sources */,
@@ -281,10 +377,13 @@
 		};
 		046AAA782357FD9F00C69DE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50E4EBA1F9F6C4CD85096DDA /* Pods-WZPAlertController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 775DZ92H74;
 				INFOPLIST_FILE = WZPAlertController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,10 +396,13 @@
 		};
 		046AAA792357FD9F00C69DE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96410FDF836C7ED85396D8C /* Pods-WZPAlertController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 775DZ92H74;
 				INFOPLIST_FILE = WZPAlertController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
