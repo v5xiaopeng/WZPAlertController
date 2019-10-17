@@ -1,0 +1,7 @@
+WZPAlertController.xcodeproj/xcuserdata/
+WZPAlertController.xcworkspace/
+Pods/
+*.swp
+Podfile.lock
+.DS_Store
+WZPAlertController.xcodeproj/project.xcworkspace/xcuserdata/
