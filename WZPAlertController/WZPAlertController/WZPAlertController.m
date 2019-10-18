@@ -19,6 +19,7 @@
     UIView *_alertBgView;
     UILabel *_titleLb;
     UIView *_contentBgView;
+    UILabel *_contentLb;
     UIButton *_cancelBtn;
     UIButton *_confirmBtn;
 }
@@ -30,7 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tapBgCancel = YES;
+    self.tapBgCancel = true;
+    self.haveCancelBtn = true;
     self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     
     UITapGestureRecognizer *bgViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgViewSingleTap)];
@@ -45,9 +47,6 @@
 }
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     CGPoint touchP = [touch locationInView:self.view];
-    if (CGRectContainsPoint(_cancelBtn.frame, touchP) || CGRectContainsPoint(_confirmBtn.frame, touchP)) {
-        return YES;
-    }
     if (CGRectContainsPoint(_alertBgView.frame, touchP)) {
         return NO;
     }
@@ -61,6 +60,7 @@
         }];
     }
 }
+//默认颜色
 - (void)initSomeColor{
     self.titleFontColor = self.titleFontColor != nil ? self.titleFontColor : [UIColor blackColor];
     self.titleBgColor = self.titleBgColor != nil ? self.titleBgColor : [UIColor whiteColor];
@@ -69,6 +69,34 @@
     self.cancelBtnBgColor = self.cancelBtnBgColor != nil ? self.cancelBtnBgColor : [UIColor whiteColor];
     self.confirmBtnFontColor = self.confirmBtnFontColor != nil ? self.confirmBtnFontColor : [UIColor whiteColor];
     self.confirmBtnBgColor = self.confirmBtnBgColor != nil ? self.confirmBtnBgColor : [UIColor greenColor];
+}
+- (void)setTitleFontColor:(UIColor *)titleFontColor{
+    _titleFontColor = titleFontColor;
+    _titleLb.textColor = _titleFontColor;
+}
+- (void)setTitleBgColor:(UIColor *)titleBgColor{
+    _titleBgColor = titleBgColor;
+    _titleLb.backgroundColor = _titleBgColor;
+}
+- (void)setContentFontColor:(UIColor *)contentFontColor{
+    _contentFontColor = contentFontColor;
+    _contentLb.textColor = _contentFontColor;
+}
+- (void)setCancelBtnFontColor:(UIColor *)cancelBtnFontColor{
+    _cancelBtnFontColor = cancelBtnFontColor;
+    [_cancelBtn setTitleColor:_cancelBtnFontColor forState:UIControlStateNormal];
+}
+- (void)setCancelBtnBgColor:(UIColor *)cancelBtnBgColor{
+    _cancelBtnBgColor = cancelBtnBgColor;
+    _cancelBtn.backgroundColor = _cancelBtnBgColor;
+}
+- (void)setConfirmBtnFontColor:(UIColor *)confirmBtnFontColor{
+    _confirmBtnFontColor = confirmBtnFontColor;
+    [_confirmBtn setTitleColor:_confirmBtnFontColor forState:UIControlStateNormal];
+}
+- (void)setConfirmBtnBgColor:(UIColor *)confirmBtnBgColor{
+    _confirmBtnBgColor = confirmBtnBgColor;
+    _confirmBtn.backgroundColor = _confirmBtnBgColor;
 }
 - (void)loadSomeView{
     _alertBgView = [[UIView alloc]init];
@@ -103,13 +131,6 @@
     _cancelBtn.backgroundColor = self.cancelBtnBgColor;
     _cancelBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [_cancelBtn addTarget:self action:@selector(alertCancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [_alertBgView addSubview:_cancelBtn];
-    [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_alertBgView);
-        make.right.equalTo(self->_alertBgView.mas_centerX);
-        make.bottom.equalTo(self->_alertBgView);
-        make.height.mas_equalTo(44);
-    }];
 //    _cancelBtn.frame = CGRectMake(0, _alertBgView.frame.size.height-44, _alertBgView.frame.size.width/2.0, 44);
     
     _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -119,12 +140,28 @@
     _confirmBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [_confirmBtn addTarget:self action:@selector(alertConfirmButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [_alertBgView addSubview:_confirmBtn];
-    [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self->_alertBgView.mas_centerX);
-        make.right.equalTo(self->_alertBgView);
-        make.bottom.equalTo(self->_alertBgView);
-        make.height.mas_equalTo(44);
-    }];
+    if (self.haveCancelBtn) {
+        [_alertBgView addSubview:_cancelBtn];
+        [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self->_alertBgView);
+            make.right.equalTo(self->_alertBgView.mas_centerX);
+            make.bottom.equalTo(self->_alertBgView);
+            make.height.mas_equalTo(44);
+        }];
+        [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self->_alertBgView.mas_centerX);
+            make.right.equalTo(self->_alertBgView);
+            make.bottom.equalTo(self->_alertBgView);
+            make.height.mas_equalTo(44);
+        }];
+    }else{
+        [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self->_alertBgView);
+            make.right.equalTo(self->_alertBgView);
+            make.bottom.equalTo(self->_alertBgView);
+            make.height.mas_equalTo(44);
+        }];
+    }
 //    _confirmBtn.frame = CGRectMake(_alertBgView.frame.size.width/2.0, _alertBgView.frame.size.height-44, _alertBgView.frame.size.width/2.0, 44);
     //内容
     _contentBgView = [[UIView alloc]init];
@@ -181,13 +218,13 @@
             make.height.mas_equalTo(kSCREEN_HEIGHT/2.0);
         }];
     }else{
-        UILabel *contentLb = [[UILabel alloc]init];
-        contentLb.text = self.contentStr;
-        contentLb.textColor = self.contentFontColor;
-        contentLb.numberOfLines = 0;
-        contentLb.font = [UIFont systemFontOfSize:15];
-        [_contentBgView addSubview:contentLb];
-        [contentLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        _contentLb = [[UILabel alloc]init];
+        _contentLb.text = self.contentStr;
+        _contentLb.textColor = self.contentFontColor;
+        _contentLb.numberOfLines = 0;
+        _contentLb.font = [UIFont systemFontOfSize:15];
+        [_contentBgView addSubview:_contentLb];
+        [_contentLb mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self->_contentBgView);
             make.left.mas_equalTo(15);
             make.bottom.equalTo(self->_contentBgView);
@@ -198,11 +235,22 @@
 - (void)alertCancelButtonClick{
     NSLog(@"取消");
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        if (self.cancelBlock) {
+            self.cancelBlock(nil);
+        }
     }];
+}
+- (void)setCancelBlock:(WZPAlertCancel)cancelBlock{
+    _cancelBlock = cancelBlock;
 }
 - (void)alertConfirmButtonClick{
     NSLog(@"确认");
+    if (self.confirmBlock) {
+        self.confirmBlock(nil);
+    }
+}
+- (void)setConfirmBlock:(WZPAlertConfirm)confirmBlock{
+    _confirmBlock = confirmBlock;
 }
 
 - (void)didReceiveMemoryWarning {

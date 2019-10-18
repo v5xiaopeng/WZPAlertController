@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040B6117235940630016E19D /* Target_WZPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B6116235940630016E19D /* Target_WZPAlertController.m */; };
 		046AAA662357FD9D00C69DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AAA652357FD9D00C69DE3 /* AppDelegate.m */; };
 		046AAA692357FD9D00C69DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AAA682357FD9D00C69DE3 /* ViewController.m */; };
 		046AAA6C2357FD9D00C69DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046AAA6A2357FD9D00C69DE3 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040B6115235940630016E19D /* Target_WZPAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_WZPAlertController.h; sourceTree = "<group>"; };
+		040B6116235940630016E19D /* Target_WZPAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_WZPAlertController.m; sourceTree = "<group>"; };
 		046AAA612357FD9D00C69DE3 /* WZPAlertController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZPAlertController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046AAA642357FD9D00C69DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		046AAA652357FD9D00C69DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040B6114235940240016E19D /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				040B6115235940630016E19D /* Target_WZPAlertController.h */,
+				040B6116235940630016E19D /* Target_WZPAlertController.m */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
 		046AAA582357FD9D00C69DE3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		048DD67F235808AE00850842 /* WZPAlertController */ = {
 			isa = PBXGroup;
 			children = (
+				040B6114235940240016E19D /* Targets */,
 				048DD680235808E200850842 /* WZPAlertController.h */,
 				048DD681235808E200850842 /* WZPAlertController.m */,
 			);
@@ -236,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040B6117235940630016E19D /* Target_WZPAlertController.m in Sources */,
 				048DD682235808E200850842 /* WZPAlertController.m in Sources */,
 				046AAA692357FD9D00C69DE3 /* ViewController.m in Sources */,
 				046AAA742357FD9F00C69DE3 /* main.m in Sources */,

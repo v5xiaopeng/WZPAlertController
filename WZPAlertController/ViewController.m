@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "WZPAlertController.h"
+#import "Target_WZPAlertController.h"
 @interface ViewController ()
 
 @end
@@ -23,6 +24,8 @@
     WZPAlertController *alert = [[WZPAlertController alloc]init];
     alert.contentType = WZPAlertControllerContentTypeWeb;
     alert.contentStr = @"https://www.baidu.com/";//@"-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg-----https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1139292180,1402602244&fm=26&gp=0.jpg";//@"http://image-7.verycd.com/1252bda8b6676e80179cfbe06354ac07158248%28600x%29/thumb.jpg";
+//    alert.modalPresentationStyle = UIModalPresentationFormSheet;
+//    alert.modalTransitionStyle = UIModalTransitionStylePartialCurl;
     [self presentViewController:alert animated:YES completion:^{
         
     }];
