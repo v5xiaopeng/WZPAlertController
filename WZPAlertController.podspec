@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZPAlertController"
-  s.version      = "6"
+  s.version      = "7"
   s.summary      = "WZPAlertController."
 
   # This description is used to generate tags and improve search results.
