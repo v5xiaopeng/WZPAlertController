@@ -31,8 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tapBgCancel = true;
-    self.haveCancelBtn = true;
     self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     
     UITapGestureRecognizer *bgViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgViewSingleTap)];
@@ -54,7 +52,7 @@
     return YES;
 }
 - (void)bgViewSingleTap{
-    if (self.tapBgCancel) {
+    if (!self.tapBgCantCancel) {
         [self dismissViewControllerAnimated:YES completion:^{
             
         }];
@@ -140,7 +138,7 @@
     _confirmBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [_confirmBtn addTarget:self action:@selector(alertConfirmButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [_alertBgView addSubview:_confirmBtn];
-    if (self.haveCancelBtn) {
+    if (!self.haveNotCancelBtn) {
         [_alertBgView addSubview:_cancelBtn];
         [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self->_alertBgView);
@@ -171,7 +169,7 @@
     [_contentBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self->_titleLb.mas_bottom);
         make.left.right.equalTo(self->_alertBgView);
-        make.bottom.equalTo(self->_cancelBtn.mas_top);
+        make.bottom.equalTo(self->_confirmBtn.mas_top);
     }];
     [self loadContentView];
 }

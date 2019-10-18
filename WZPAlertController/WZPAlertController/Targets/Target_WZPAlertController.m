@@ -41,10 +41,10 @@ static WZPAlertController *__alert;
     __alert.confirmBtnBgColor = params[@"confirmBtnBgColor"];
 }
 - (void)Action_setTapBgDontCancel:(NSDictionary *)params{
-    __alert.tapBgCancel = false;
+    __alert.tapBgCantCancel = true;
 }
 - (void)Action_setHaveNotCancelBtn:(NSDictionary *)params{
-    __alert.haveCancelBtn = false;
+    __alert.haveNotCancelBtn = true;
 }
 - (void)Action_setContentString:(NSDictionary *)params{
     __alert.contentStr = params[@"contentStr"];

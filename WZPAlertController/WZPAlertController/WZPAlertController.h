@@ -35,14 +35,16 @@ typedef NS_ENUM(NSInteger, WZPAlertControllerContentType)
 @property (nonatomic,strong) UIColor *confirmBtnFontColor;
 /** 确认按钮背景颜色 */
 @property (nonatomic,strong) UIColor *confirmBtnBgColor;
-/** 点击空白是否消失，默认 消失yes */
-@property (nonatomic,assign) bool tapBgCancel;
-/** 是否有取消按钮，默认 取消和确认 */
-@property (nonatomic,assign) bool haveCancelBtn;
+/** 点击空白是否消失，默认消失 !tapBgCantCancel = true */
+@property (nonatomic,assign) bool tapBgCantCancel;
+/** 是否有取消按钮，默认取消和确认 !haveNotCancelBtn = true */
+@property (nonatomic,assign) bool haveNotCancelBtn;
+//@property (nonatomic,assign) NSInteger haveCancelBtn;
 
 typedef void(^WZPAlertCancel)(id date);
 typedef void(^WZPAlertConfirm)(id date);
 @property (nonatomic,  copy) WZPAlertCancel cancelBlock;
 @property (nonatomic,  copy) WZPAlertConfirm confirmBlock;
+
 
 @end
