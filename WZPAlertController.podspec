@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZPAlertController"
-  s.version      = "8"
+  s.version      = "9"
   s.summary      = "WZPAlertController."
 
   # This description is used to generate tags and improve search results.
@@ -136,5 +136,6 @@ Pod::Spec.new do |s|
   # s.dependency "BLNetworking"
   # s.dependency "BLAPIManagers"
   # s.dependency "BLMediator"
-
+s.dependency "SDWebImage"
+s.dependency "Masonry"
 end
