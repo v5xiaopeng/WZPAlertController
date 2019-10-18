@@ -15,7 +15,7 @@
 #define kSCREEN_HEIGHT      ([UIScreen mainScreen].bounds.size.height)
 #define kCOLORRGB(r,g,b)    [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define kIphone6Scale(x)    ((x) * kSCREEN_WIDTH / 375.0f)
-@interface WZPAlertController ()<UIGestureRecognizerDelegate>{
+@interface WZPAlertController ()<UIGestureRecognizerDelegate,WKUIDelegate,WKNavigationDelegate>{
     UIView *_alertBgView;
     UILabel *_titleLb;
     UIView *_contentBgView;
@@ -96,6 +96,7 @@
     _confirmBtnBgColor = confirmBtnBgColor;
     _confirmBtn.backgroundColor = _confirmBtnBgColor;
 }
+//alertView
 - (void)loadSomeView{
     _alertBgView = [[UIView alloc]init];
     _alertBgView.backgroundColor = [UIColor whiteColor];
@@ -108,7 +109,6 @@
         make.centerY.equalTo(self.view);
         make.height.mas_lessThanOrEqualTo(kSCREEN_HEIGHT-50);
     }];
-//    _alertBgView.frame = CGRectMake(25, (kSCREEN_HEIGHT-300)/2.0, kSCREEN_WIDTH-50, 300);
     //标题
     _titleLb = [[UILabel alloc]init];
     _titleLb.text = @"标题";
@@ -117,7 +117,6 @@
     _titleLb.textColor = self.titleFontColor;
     _titleLb.backgroundColor = self.titleBgColor;
     [_alertBgView addSubview:_titleLb];
-//    _titleLb.frame = CGRectMake(0, 0, _alertBgView.frame.size.width, 50);
     [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self->_alertBgView);
         make.height.mas_equalTo(50);
@@ -129,7 +128,6 @@
     _cancelBtn.backgroundColor = self.cancelBtnBgColor;
     _cancelBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [_cancelBtn addTarget:self action:@selector(alertCancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
-//    _cancelBtn.frame = CGRectMake(0, _alertBgView.frame.size.height-44, _alertBgView.frame.size.width/2.0, 44);
     
     _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
@@ -160,12 +158,10 @@
             make.height.mas_equalTo(44);
         }];
     }
-//    _confirmBtn.frame = CGRectMake(_alertBgView.frame.size.width/2.0, _alertBgView.frame.size.height-44, _alertBgView.frame.size.width/2.0, 44);
     //内容
     _contentBgView = [[UIView alloc]init];
     _contentBgView.backgroundColor = [UIColor whiteColor];
     [_alertBgView addSubview:_contentBgView];
-//    _contentBgView.frame = CGRectMake(0, 50, _alertBgView.frame.size.width, _alertBgView.frame.size.height-50-44);
     [_contentBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self->_titleLb.mas_bottom);
         make.left.right.equalTo(self->_alertBgView);
@@ -173,6 +169,7 @@
     }];
     [self loadContentView];
 }
+//三种类型的内容
 - (void)loadContentView{
     if (self.contentType == WZPAlertControllerContentTypeImage) {
         UIImageView *contentImageView = [[UIImageView alloc]init];
@@ -192,7 +189,6 @@
                     contentImageView.image = image;
                     [contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                         make.center.equalTo(self->_contentBgView);
-                        //            make.top.left.bottom.right.equalTo(self->_contentBgView);
                         make.width.mas_equalTo(scaleImageWidth);
                         make.height.mas_equalTo(scaleImageHeight);
                     }];
@@ -208,7 +204,8 @@
         }];
     }else if (self.contentType == WZPAlertControllerContentTypeWeb) {
         WKWebView *contentWebView = [[WKWebView alloc]init];
-        
+        contentWebView.UIDelegate = self;
+        contentWebView.navigationDelegate = self;
         [contentWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.contentStr]]];
         [_contentBgView addSubview:contentWebView];
         [contentWebView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -230,6 +227,9 @@
         }];
     }
 }
+#pragma mark ---预留web交互---
+
+#pragma mark ---action And block---
 - (void)alertCancelButtonClick{
     NSLog(@"取消");
     [self dismissViewControllerAnimated:YES completion:^{

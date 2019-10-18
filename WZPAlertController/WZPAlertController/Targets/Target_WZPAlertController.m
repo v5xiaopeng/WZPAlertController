@@ -16,19 +16,22 @@ static WZPAlertController *__alert;
 - (UIViewController *)Action_initWebAlertController:(NSDictionary *)params{
     __alert = [[WZPAlertController alloc]init];
     __alert.contentType = WZPAlertControllerContentTypeWeb;
-    __alert.contentStr = @"https://www.baidu.com/";
+    __alert.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    __alert.modalPresentationStyle = UIModalPresentationCustom;
     return __alert;
 }
 - (UIViewController *)Action_initTextAlertController:(NSDictionary *)params{
     __alert = [[WZPAlertController alloc]init];
     __alert.contentType = WZPAlertControllerContentTypeText;
-    __alert.contentStr = @"https://www.baidu.com/";
+    __alert.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    __alert.modalPresentationStyle = UIModalPresentationCustom;
     return __alert;
 }
 - (UIViewController *)Action_initImageAlertController:(NSDictionary *)params{
     __alert = [[WZPAlertController alloc]init];
     __alert.contentType = WZPAlertControllerContentTypeImage;
-    __alert.contentStr = @"https://www.baidu.com/";
+    __alert.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    __alert.modalPresentationStyle = UIModalPresentationCustom;
     return __alert;
 }
 - (void)Action_setAlertColors:(NSDictionary *)params{
