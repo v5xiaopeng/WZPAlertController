@@ -130,7 +130,7 @@
     [_cancelBtn addTarget:self action:@selector(alertCancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_confirmBtn setTitle:[self.confirmTitleStr isEqualToString:@""] ? @"确认" : self.cancelTitleStr forState:UIControlStateNormal];
+    [_confirmBtn setTitle:[self.confirmTitleStr isEqualToString:@""] ? @"确认" : self.confirmTitleStr forState:UIControlStateNormal];
     [_confirmBtn setTitleColor:self.confirmBtnFontColor forState:UIControlStateNormal];
     _confirmBtn.backgroundColor = self.confirmBtnBgColor;
     _confirmBtn.titleLabel.font = [UIFont systemFontOfSize:15];
