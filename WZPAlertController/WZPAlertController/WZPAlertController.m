@@ -111,7 +111,7 @@
     }];
     //标题
     _titleLb = [[UILabel alloc]init];
-    _titleLb.text = @"标题";
+    _titleLb.text = [self.titleStr isEqualToString:@""] ? @"标题" : self.titleStr;
     _titleLb.textAlignment = NSTextAlignmentCenter;
     _titleLb.font = [UIFont systemFontOfSize:20];
     _titleLb.textColor = self.titleFontColor;
@@ -123,14 +123,14 @@
     }];
     //按钮
     _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [_cancelBtn setTitle:[self.cancelTitleStr isEqualToString:@""] ? @"取消" : self.cancelTitleStr forState:UIControlStateNormal];
     [_cancelBtn setTitleColor:self.cancelBtnFontColor forState:UIControlStateNormal];
     _cancelBtn.backgroundColor = self.cancelBtnBgColor;
     _cancelBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [_cancelBtn addTarget:self action:@selector(alertCancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
+    [_confirmBtn setTitle:[self.confirmTitleStr isEqualToString:@""] ? @"确认" : self.cancelTitleStr forState:UIControlStateNormal];
     [_confirmBtn setTitleColor:self.confirmBtnFontColor forState:UIControlStateNormal];
     _confirmBtn.backgroundColor = self.confirmBtnBgColor;
     _confirmBtn.titleLabel.font = [UIFont systemFontOfSize:15];

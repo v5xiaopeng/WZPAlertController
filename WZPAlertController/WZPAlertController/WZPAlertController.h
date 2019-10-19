@@ -21,6 +21,12 @@ typedef NS_ENUM(NSInteger, WZPAlertControllerContentType)
 @property (nonatomic,assign) WZPAlertControllerContentType contentType;
 /** 内容 */
 @property (nonatomic,  copy) NSString *contentStr;
+/** 标题文字 */
+@property (nonatomic,  copy) NSString *titleStr;
+/** 取消按钮文字 */
+@property (nonatomic,  copy) NSString *cancelTitleStr;
+/** 确认按钮文字 */
+@property (nonatomic,  copy) NSString *confirmTitleStr;
 /** 标题字体颜色 */
 @property (nonatomic,strong) UIColor *titleFontColor;
 /** 标题背景颜色 */
@@ -39,7 +45,7 @@ typedef NS_ENUM(NSInteger, WZPAlertControllerContentType)
 @property (nonatomic,assign) bool tapBgCantCancel;
 /** 是否有取消按钮，默认取消和确认 !haveNotCancelBtn = true */
 @property (nonatomic,assign) bool haveNotCancelBtn;
-//@property (nonatomic,assign) NSInteger haveCancelBtn;
+
 
 typedef void(^WZPAlertCancel)(id date);
 typedef void(^WZPAlertConfirm)(id date);

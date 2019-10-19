@@ -51,6 +51,9 @@ static WZPAlertController *__alert;
 }
 - (void)Action_setContentString:(NSDictionary *)params{
     __alert.contentStr = params[@"contentStr"];
+    __alert.titleStr = params[@"titleStr"];
+    __alert.cancelTitleStr = params[@"cancelTitleStr"];
+    __alert.confirmTitleStr = params[@"confirmTitleStr"];
 }
 - (void)Action_setAlertCancelBlock:(NSDictionary *)params{
     __alert.cancelBlock = params[@"block"];
