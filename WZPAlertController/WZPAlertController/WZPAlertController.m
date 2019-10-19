@@ -243,7 +243,7 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]
         && object == _contentWebView) {
-        NSLog(@"网页加载进度 = %f",_contentWebView.estimatedProgress);
+//        NSLog(@"网页加载进度 = %f",_contentWebView.estimatedProgress);
         _webProgressView.progress = _contentWebView.estimatedProgress;
         if (_contentWebView.estimatedProgress >= 1.0f) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -357,7 +357,7 @@
 }
 #pragma mark ---action And block---
 - (void)alertCancelButtonClick{
-    NSLog(@"取消");
+//    NSLog(@"取消");
     [self dismissViewControllerAnimated:YES completion:^{
         if (self.cancelBlock) {
             self.cancelBlock(nil);
@@ -368,7 +368,7 @@
     _cancelBlock = cancelBlock;
 }
 - (void)alertConfirmButtonClick{
-    NSLog(@"确认");
+//    NSLog(@"确认");
     if (self.confirmBlock) {
         self.confirmBlock(nil);
     }
@@ -377,7 +377,7 @@
     _confirmBlock = confirmBlock;
 }
 - (void)dealloc{
-    NSLog(@"WZPAlertController---dealloc");
+//    NSLog(@"WZPAlertController---dealloc");
     [_contentWebView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
 }
 
