@@ -93,7 +93,7 @@ static WZPAlertController *__alert;
 
 /**
  设置弹框内容、标题文字、取消/确认按钮文字
- 
+ @alert contentStr web类型,URLString; image类型,image地址string; text类型,text内容string
  @param params 相关文字键值
  */
 - (void)Action_setContentStringAndSomeTitle:(NSDictionary *)params{
@@ -101,6 +101,7 @@ static WZPAlertController *__alert;
     __alert.titleStr = params[@"titleStr"];
     __alert.cancelTitleStr = params[@"cancelTitleStr"];
     __alert.confirmTitleStr = params[@"confirmTitleStr"];
+    
 }
 
 /**
