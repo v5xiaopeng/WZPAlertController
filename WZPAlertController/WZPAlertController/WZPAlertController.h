@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//弹框内容类型
 typedef NS_ENUM(NSInteger, WZPAlertControllerContentType)
 {
     WZPAlertControllerContentTypeText = 0,  //文字
@@ -46,7 +47,7 @@ typedef NS_ENUM(NSInteger, WZPAlertControllerContentType)
 /** 是否有取消按钮，默认取消和确认 !haveNotCancelBtn = true */
 @property (nonatomic,assign) bool haveNotCancelBtn;
 
-
+/** 相关点击事件的block */
 typedef void(^WZPAlertCancel)(id date);
 typedef void(^WZPAlertConfirm)(id date);
 @property (nonatomic,  copy) WZPAlertCancel cancelBlock;
